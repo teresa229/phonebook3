@@ -9,7 +9,7 @@ public class PersonVo {
 	private String company;
 	
 	//생성자
-	public PersonVo() {}
+	public PersonVo() {} //public String modify(@ModelAttribute PersonVo personVo)를 실행시키기 위해 필요하다.
 
 	public PersonVo(String name, String hp, String company) {
 		this.name = name;

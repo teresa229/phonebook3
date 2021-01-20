@@ -14,7 +14,7 @@
 		입력한 정보 내역입니다.
 	</p>
 
-		<c:forEach items="${requestScope.pList}" var="personVo">
+		<c:forEach items="${requestScope.pList}" var="personVo">  <!-- 내가 정해준 이름 var="personVo" -->
 		<table border = "1">
 			<tr>
 				<td>이름(name)</td>
@@ -29,8 +29,9 @@
 				<td>${personVo.company}</td>     
 			</tr>
 			<tr>
-				<td><a href="/phonebook3/phone/modifyForm?id=${personVo.personId}">[수정]</a></td>  
-				<td><a href="/phonebook3/phone/delete?id=${personVo.personId}">[삭제]</a></td>
+				<td><a href="/phonebook3/phone/modifyForm?personId=${personVo.personId}">[수정]</a></td>  
+				<td><a href="/phonebook3/phone/delete/${personVo.personId}">[삭제]</a></td>
+				<%-- <a href="/phonebook3/phone/delete?personId=${personVo.personId}">[삭제]</a> --%> <!-- vo애서 가져오는 것은 아니므로 실질적으로 id도 가능. 이왕이면 통일하자 -->
 			</tr> 
 		</table>
 	

@@ -14,16 +14,15 @@
 		</p>
 		
 		<form action="/phonebook3/phone/modify" method="get">
-			이름(name):<input type="text" name="name" value="${pvo.name}"><br>   <!-- personVo.pvo.name 아니다. -->
+			이름(name):<input type="text" name="name" value="${pvo.name}"><br>   <!-- requestScope 생략가능.pvo.name 아니다. -->
 			핸드폰(hp):<input type="text" name="hp" value="${pvo.hp}"><br>  
 			회사(company):<input type="text" name="company" value="${pvo.company}"><br>  
 			
-			id, action:
-			<input type="hidden" name="id" value="${pvo.personId}"> <!-- 넘어갈 id값이 없었다 -->  <!-- personVo.getPersonId() -->
-			<input type="text" name="action" value="update">  <!--hidden으로 수정-->
+			<!-- name= id를 personId -->
+			<input type="text" name="personId" value="${pvo.personId}"> <!-- 이 데이터가 있어야 서버에서 수정을 할 수 있다. 넘어갈 id값이 없었다. 수정버튼을 눌렀을 경우를 대비하는 것이다. -->  <!--수업 personVo.getPersonId() -->
 			<button type="submit">수정</button>
 		</form>
-		 <!-- id값이 안 넘어가고 있다. -->
+		<!-- id값이 안 넘어가고 있다. -->
 		 
 		<br>
 		<a href="/phonebook3/phone/list">리스트 바로 가기</a>
